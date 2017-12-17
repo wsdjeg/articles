@@ -1,0 +1,5 @@
+baseURL = "http://thinkinvim.org/"
+languageCode = "en-us"
+title = "Think In Vim"
+footer = "Edit Text at the Speed of Thought"
+publishDir = "docs"

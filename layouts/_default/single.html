@@ -1,0 +1,19 @@
+{{ partial "header.html" . }}
+<article>
+  <header>
+    <h1><span class="title">{{ .Title }}</span></h1>
+
+    {{ if .Params.date }}<time class="pull-right">{{ .Date.Format "2006/01/02" }}</time>{{ end }}
+    {{ with (.Param "tags") }}
+    <ul class="tags">
+    {{ range $k := . }}<li><a href="{{ relURL (print "/tags/" $k | urlize) }}">{{$k}}</a></li>{{ end }}
+    </ul>
+    {{ end }}
+  </header>
+
+  <section class="main">
+    {{ .Content }}
+  </section>
+</article>
+
+{{ partial "footer.html" . }}

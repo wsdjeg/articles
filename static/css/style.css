@@ -1,0 +1,118 @@
+body {
+  max-width: 800px;
+  margin: auto;
+  padding: .2em;
+  line-height: 1.5em;
+}
+
+/* Header and Footer */
+.menu li { display: inline-block; }
+
+.terms { font-size: .9em; }
+.menu, footer { text-align: center; }
+.title { font-size: 1.1em; }
+footer a { text-decoration: none; }
+
+.pull-left {
+    float: left
+}
+.pull-right {
+    float: right
+}
+
+a {
+  color: #613DC1;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.tags a {
+}
+
+nav {
+    position: relative;
+    height: 1.75rem;
+    font-family: "Lucida Console" , "Liberation Mono";
+    font-size: .875rem;
+    background: #613DC1;
+    border-bottom: 1px solid #000;
+}
+
+.tags li {
+  display: inline-block;
+}
+
+.tags a {
+  margin: 0 1px;
+}
+
+.tags a {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: whitesmoke;
+  border-radius: 3px;
+  color: #4a4a4a;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-size: 0.75rem;
+  height: 2em;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  line-height: 1.5;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+  white-space: nowrap;
+}
+
+nav ul, ul.tags {
+    margin: 0;
+    padding: 0;
+    list-style: none
+}
+nav {
+    padding: 0 0.5rem
+}
+
+nav a {
+    color: #fff;
+    line-height: 1.75rem;
+    padding: 0 0.5rem
+}
+nav a:hover, nav .current a {
+    color: #fff
+}
+
+/* Code Boxes */
+pre {
+  border: 1px solid #ddd;
+  box-shadow: 5px 5px 5px #eee;
+  background: #f8f8f8;
+  padding: 1em;
+  overflow-x: auto;
+}
+code { background: #f9f9f9; }
+pre code { background: none; }
+
+/* Images, tables, misc. */
+img, iframe, video { max-width: 100%; }
+main { hyphens: auto; }
+blockquote {
+  background: #f9f9f9;
+  border-left: 5px solid #ccc;
+  padding: 3px 1em 3px;
+}
+
+table {
+  margin: auto;
+  border-top: 1px solid #666;
+  border-bottom: 1px solid #666;
+}
+table thead th { border-bottom: 1px solid #ddd; }
+th, td { padding: 5px; }
+tr:nth-child(even) { background: #eee }

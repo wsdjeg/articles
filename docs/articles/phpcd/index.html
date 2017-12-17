@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>phpcd.vim | Think In Vim</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <ul>
+          
+          
+          <li class="pull-left ">
+            <a href="http://thinkinvim.org/">Think In Vim</a>
+          </li>
+          
+
+          
+        </ul>
+      </nav>
+
+    </header>
+
+<article>
+  <header>
+    <h1><span class="title">phpcd.vim</span></h1>
+
+    <time class="pull-right">2017/12/18</time>
+    
+    <ul class="tags">
+    <li><a href="/tags/php">php</a></li><li><a href="/tags/neovim">neovim</a></li>
+    </ul>
+    
+  </header>
+
+  <section class="main">
+    
+
+<h2 id="introduction">Introduction</h2>
+
+<p><a href="https://asciinema.org/a/29144"><img src="https://asciinema.org/a/29144.png" alt="asciicast" /></a></p>
+
+<p>PHPCD (PHP Completion Daemon) is another PHP completion engine for Vim/NeoVim.</p>
+
+<p>PHPCD is based on <a href="https://github.com/shawncplus/phpcomplete.vim">phpcomplete.vim</a> but is faster and smarter.</p>
+
+<p>While phpcomplete.vim uses the tags file to fetch the context info, PHPCD uses PHP&rsquo;s Reflection mechanism to fetch the context info, and this is why PHPCD is faster. All the phpcomplete VimL code related the tags file has been droped and reimplemented.</p>
+
+<p>PHPCD consists of two parts. On part is written in VimL (mainly based on phpcomplete.vim), and the other in PHP. <del>The communication between the VimL part and the PHP part relies on NeoVim&rsquo;s MsgPack-RPC mechanism. This is why NeoVim is needed.</del> Both NeoVim and Vim 8.0+ are supported now. Thanks to NoeVims&rsquo;s MsgPack-RPC and Vim&rsquo;s Channel/Job mechanism.</p>
+
+<h2 id="feature">Feature</h2>
+
+<ul>
+<li>Fast, Lightweight, Powerful, Smart</li>
+<li>Correct restriction of static or standard methods based on context (show only static methods with <code>::</code> and only standard with <code>-&gt;</code>)</li>
+<li>Real support for <code>self::</code>, <code>static::</code>, <code>parent::</code> and <code>$this-&gt;</code> with the aforementioned context restriction</li>
+<li>Better class detection
+
+<ul>
+<li>Recognize <code>/* @var $yourvar YourClass */</code>、 <code>/* @var YourClass $yourvar */</code> type mark comments</li>
+<li>Recognize <code>$instance = new Class;</code> class instantiations</li>
+<li>Recognize <code>(new Class)-&gt;</code> class instantiations</li>
+<li><del>Recognize <code>$date = DateTime::createFromFormat(...)</code> built-in class return types</del></li>
+<li>Recognize both parameter type hinting and return hinting in function prototypes</li>
+<li>Recognize types in <code>@param</code> lines in function docblocks</li>
+<li>Recognize types in <code>@return</code> lines in function docblocks</li>
+<li>Recognize <code>$instance = Class::foo()-&gt;bar();</code> method call chain return type</li>
+<li>Recognize array of objects via docblock like <code>$foo[42]-&gt;</code> or for variables created in <code>foreach</code></li>
+</ul></li>
+<li>Displays docblock info in the preview for methods and properties</li>
+<li>Support built-in class support with constants, methods and properties</li>
+<li>Enhanced jump-to-definition on <kbd>ctrl</kbd>+<kbd>]</kbd></li>
+</ul>
+
+<h2 id="installation-usage">Installation &amp; Usage</h2>
+
+<h3 id="system-requirement">System requirement</h3>
+
+<ol>
+<li><a href="http://php.net/">PHP 5.6+</a></li>
+<li><a href="http://php.net/manual/en/book.pcntl.php">PCNTL</a> Extension</li>
+<li><a href="https://github.com/msgpack/msgpack-php">Msgpack 0.5.7+(for NeoVim)</a> Extension or <a href="http://php.net/manual/en/intro.json.php">JSON(for Vim 7.4+)</a> Extension</li>
+<li><del><a href="https://getcomposer.org/">Composer</a> Project</del></li>
+</ol>
+
+<h3 id="install-phpcd">Install PHPCD</h3>
+
+<p>We recommend you use <a href="https://github.com/junegunn/vim-plug/blob/master/README.md">Vim-Plug</a> to manage your vim plugins.</p>
+
+<p>With Vim-Plug installed, put the following lines in your vimrc:</p>
+
+<pre><code>Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
+</code></pre>
+
+<p>And then execute <code>:PlugInstall</code> in the command mode.</p>
+
+<p><strong>If you install phpcd manually, you need run <code>composer install</code> in the phpcd.vim root directory.</strong></p>
+
+<h3 id="deoplete">deoplete</h3>
+
+<p>If you using the <a href="https://github.com/Shougo/deoplete.nvim">deoplete</a>, you can add the following lines to you init.vim</p>
+
+<pre><code class="language-viml">let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
+let g:deoplete#ignore_sources.php = ['omni']
+</code></pre>
+
+<p>The phpcd will work with deoplete happily.</p>
+
+<p>However if you are experiencing problems with deoplete you can disable the phpcd source.</p>
+
+<pre><code class="language-viml">let g:deoplete#ignore_sources = get(g:, 'deoplete#ignore_sources', {})
+let g:deoplete#ignore_sources.php = ['phpcd', 'omni']
+</code></pre>
+
+<h2 id="usage">Usage</h2>
+
+<p><del>First, in the project directory, run <code>composer install</code> to install all the dependent packages and generate the autoload file.</del>
+The <strong>composer</strong> is not required any more. However, if you want to let phpcd work with your project, you must to make a <strong>autoload</strong> file for your project.</p>
+
+<p>If you use composer, composer will make the <code>vendor/autoload.php</code>. phpcd will use <code>vendor/autoload.php</code> automatically.</p>
+
+<p>If your project does not use composer but have a <code>path/to/autoload_file.php</code>, you need to create a <strong>.phpcd.vim</strong> file in your project root path, and let it reads</p>
+
+<pre><code class="language-viml">let g:phpcd_autoload_path = 'path/to/autoload_file.php'
+</code></pre>
+
+<p>And phpcd will use the <code>g:phpcd_autoload_path</code> to load your class.</p>
+
+<p>The default PHP command used to run PHP parts of daemon is simply <code>php</code>. You may override it by assigning <code>g:phpcd_php_cli_executable</code> another value in your <code>vimrc</code>, for example:</p>
+
+<pre><code>let g:phpcd_php_cli_executable = 'php7.0'
+</code></pre>
+
+<p>Use <kbd>Ctrl</kbd>+<kbd>x</kbd><kbd>Ctrl</kbd>+<kbd>o</kbd> to complete and use <kbd>ctrl</kbd>+<kbd>]</kbd> to go to the defination.</p>
+
+<p>If you use neosnippet, you may like to set <code>g:phpcd_disable_modifier</code> to <code>0</code>.</p>
+
+  </section>
+</article>
+
+    <hr>
+    <footer>
+      <p>Edit Text at the Speed of Thought<p/>
+    </footer>
+  </body>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</html>
+

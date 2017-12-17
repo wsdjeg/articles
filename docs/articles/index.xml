@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Articles on Think In Vim</title>
+    <link>http://thinkinvim.org/articles/</link>
+    <description>Recent content in Articles on Think In Vim</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 18 Dec 2017 00:01:27 +0800</lastBuildDate>
+    
+	<atom:link href="http://thinkinvim.org/articles/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>phpcd.vim</title>
+      <link>http://thinkinvim.org/articles/phpcd/</link>
+      <pubDate>Mon, 18 Dec 2017 00:01:27 +0800</pubDate>
+      
+      <guid>http://thinkinvim.org/articles/phpcd/</guid>
+      <description>Introduction 
+PHPCD (PHP Completion Daemon) is another PHP completion engine for Vim/NeoVim.
+PHPCD is based on phpcomplete.vim but is faster and smarter.
+While phpcomplete.vim uses the tags file to fetch the context info, PHPCD uses PHP&amp;rsquo;s Reflection mechanism to fetch the context info, and this is why PHPCD is faster. All the phpcomplete VimL code related the tags file has been droped and reimplemented.
+PHPCD consists of two parts.</description>
+    </item>
+    
+  </channel>
+</rss>
