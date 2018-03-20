@@ -5,27 +5,27 @@
     <link>http://thinkinvim.org/tags/</link>
     <description>Recent content in Tags on Think In Vim</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Mon, 18 Dec 2017 00:01:27 +0800</lastBuildDate>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 20 Mar 2018 17:53:00 +0800</lastBuildDate>
     
 	<atom:link href="http://thinkinvim.org/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Neovim</title>
-      <link>http://thinkinvim.org/tags/neovim/</link>
-      <pubDate>Mon, 18 Dec 2017 00:01:27 +0800</pubDate>
+      <title>Git</title>
+      <link>http://thinkinvim.org/tags/git/</link>
+      <pubDate>Tue, 20 Mar 2018 17:53:00 +0800</pubDate>
       
-      <guid>http://thinkinvim.org/tags/neovim/</guid>
+      <guid>http://thinkinvim.org/tags/git/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Php</title>
-      <link>http://thinkinvim.org/tags/php/</link>
-      <pubDate>Mon, 18 Dec 2017 00:01:27 +0800</pubDate>
+      <title>Vim</title>
+      <link>http://thinkinvim.org/tags/vim/</link>
+      <pubDate>Tue, 20 Mar 2018 17:53:00 +0800</pubDate>
       
-      <guid>http://thinkinvim.org/tags/php/</guid>
+      <guid>http://thinkinvim.org/tags/vim/</guid>
       <description></description>
     </item>
     

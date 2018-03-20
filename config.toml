@@ -1,5 +1,5 @@
 baseURL = "http://thinkinvim.org/"
-languageCode = "en-us"
+languageCode = "zh-cn"
 title = "Think In Vim"
 footer = "Edit Text at the Speed of Thought"
 publishDir = "docs"

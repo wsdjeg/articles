@@ -5,23 +5,24 @@
     <link>http://thinkinvim.org/articles/</link>
     <description>Recent content in Articles on Think In Vim</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Mon, 18 Dec 2017 00:01:27 +0800</lastBuildDate>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 20 Mar 2018 17:53:00 +0800</lastBuildDate>
     
 	<atom:link href="http://thinkinvim.org/articles/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>phpcd.vim</title>
-      <link>http://thinkinvim.org/articles/phpcd/</link>
-      <pubDate>Mon, 18 Dec 2017 00:01:27 +0800</pubDate>
+      <title>使用 git 管理 vim 插件</title>
+      <link>http://thinkinvim.org/articles/vim-plugin-git/</link>
+      <pubDate>Tue, 20 Mar 2018 17:53:00 +0800</pubDate>
       
-      <guid>http://thinkinvim.org/articles/phpcd/</guid>
-      <description>Introduction 
-PHPCD (PHP Completion Daemon) is another PHP completion engine for Vim/NeoVim.
-PHPCD is based on phpcomplete.vim but is faster and smarter.
-While phpcomplete.vim uses the tags file to fetch the context info, PHPCD uses PHP&amp;rsquo;s Reflection mechanism to fetch the context info, and this is why PHPCD is faster. All the phpcomplete VimL code related the tags file has been droped and reimplemented.
-PHPCD consists of two parts.</description>
+      <guid>http://thinkinvim.org/articles/vim-plugin-git/</guid>
+      <description>vim 有很多管理插件的插件，例如 vundle、vim-plug、dein 等等。我最早使用的是 vundle，后来迁移到了 vim-plug 上，中间也试用过 dein，但没有发现亮点。这些插件的核心功能就是从 GitHub 下载或者更新插件。而实现这些核心功能并不复杂，git 就是很好的工具。
+插件的目录结构 所谓的 vim 插件不过一个特殊的文件夹，其主要的结构如下：
+ autoload/ 插件公共代码，vim 在执行 viml 的时候自动载入。:h autoload colors/ 配色主题定义文件。:h colorscheme ftplugin/ 专用代码，以文件类型加下划线开头，遇到对应文件自动执行。:h write-filetype-plugin plugin/ 通用代码，自动执行。:h write-plugin syntax/ 语法高亮定义文件。:h mysyntaxfile  一般的插件都有 autload 和 plugin 两个目录，简单的插件可能只有一个 plugin 目录，支持多种语言的插件会有一个 ftplugin 目录。vim 还支持很多其他功能的目录，大家可以通过 :h runtimepath 查看详细的说明文档。
+vim 如何加载插件 在 vim 上执行 :set runtimepath，会有以下输出：
+runtimepath=~/.vim,/usr/share/vim/vimfiles,/usr/share/vim/vim80,/usr/share/vim/vimfiles/after,~/.vim/after  这是一个逗号分割的路径列表，每个路径都是一个插件。vim 会依次执行相应的 viml 文件，载入各种定义文件。在没有插件管理器的年代，安装插件就是将插件对应的目录复制到 ~/.vim。但是，直接使用 ~/.vim 会将不同插件的目录混合到一起，所以很难去更新特定插件（这是不是跟 linux 的软件包管理器很相似呢？）。
+这时候，各种插件管理器就粉墨登场了，而它们的实质就是在修改这个 runtimepath 变量。</description>
     </item>
     
   </channel>

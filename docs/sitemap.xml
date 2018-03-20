@@ -3,13 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://thinkinvim.org/articles/phpcd/</loc>
-    <lastmod>2017-12-18T00:01:27+08:00</lastmod>
+    <loc>http://thinkinvim.org/articles/vim-plugin-git/</loc>
+    <lastmod>2018-03-20T17:53:00+08:00</lastmod>
   </url>
   
   <url>
     <loc>http://thinkinvim.org/articles/</loc>
-    <lastmod>2017-12-18T00:01:27+08:00</lastmod>
+    <lastmod>2018-03-20T17:53:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -19,26 +19,26 @@
   </url>
   
   <url>
-    <loc>http://thinkinvim.org/tags/neovim/</loc>
-    <lastmod>2017-12-18T00:01:27+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://thinkinvim.org/tags/php/</loc>
-    <lastmod>2017-12-18T00:01:27+08:00</lastmod>
+    <loc>http://thinkinvim.org/tags/git/</loc>
+    <lastmod>2018-03-20T17:53:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://thinkinvim.org/tags/</loc>
-    <lastmod>2017-12-18T00:01:27+08:00</lastmod>
+    <lastmod>2018-03-20T17:53:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://thinkinvim.org/</loc>
-    <lastmod>2017-12-18T00:01:27+08:00</lastmod>
+    <lastmod>2018-03-20T17:53:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://thinkinvim.org/tags/vim/</loc>
+    <lastmod>2018-03-20T17:53:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   

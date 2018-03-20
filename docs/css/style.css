@@ -96,7 +96,7 @@ pre {
   padding: 1em;
   overflow-x: auto;
 }
-code { background: #f9f9f9; }
+code { background: lightcyan; }
 pre code { background: none; }
 
 /* Images, tables, misc. */
